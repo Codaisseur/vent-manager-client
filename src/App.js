@@ -1,9 +1,20 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
+import VentList from './components/VentList'
+import VentDetails from './components/VentDetails'
 
-class App extends React.Component {
+export default class App extends React.Component {
   render () {
-    return 'hello world'
+    return <main>
+      <Route
+        path='/'
+        exact
+        component={VentList}
+      />
+      <Route
+        path='/vent/:id'
+        component={VentDetails}
+      />
+    </main>
   }
 }
-
-export default App
